@@ -1,0 +1,123 @@
+.container {
+    position: relative;
+    background-image:url("https://tse4.mm.bing.net/th?id=OIP.N9Ks706xwZ8KjSgRNW3w7wHaI4&pid=Api&P=0&h=220");
+    height:900px;
+    bottom:30px;
+    
+
+}
+h1{
+background-color: black;
+color:white;
+height:50px;
+text-align:left;
+padding:10px;
+
+}
+
+   
+   
+    
+     
+ 
+.black-box {
+    position: relative;
+    z-index: 1;
+     height: 100px;
+    margin: 30px;
+    background-color:lightseagreen;
+    padding:10px;
+    opacity:80%;
+    border:10px;
+    border-radius:5px;
+    font-size: xx-large;
+    
+
+
+
+  }
+  
+  .gray-box {
+    position: absolute;
+    z-index: 3;
+    background-color:lightskyblue;
+    height: 500px;
+    width: 50%;
+    left: 750px;
+    bottom: 75px;
+    opacity:50%;
+    border:10px;
+    border-radius:5px;
+    font-size: xx-large;
+    font-style: italic;
+}
+  
+  .green-box {
+    position: absolute;
+    z-index: 2;
+    background: lightyellow;
+    width: 35%;
+    left: 270px;
+    top: 20px;
+    height: 800px;
+    opacity:80%;
+    border:10px;
+    border-radius:5px;
+    font-size: xx-large;
+    font-style: italic;
+  }
+a:hover{
+color:black;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-style:oblique;
+border:10px;
+font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+    
+ 
+  
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
