@@ -10,6 +10,7 @@ function App() {
 
   return (
     <>
+    <h1>Authentication App</h1>
     {username && <h2>Welcome {username}!</h2>}
       <SignUpForm setToken={setToken} />
       <Authenticate token={token} setUsername={setUsername}/>

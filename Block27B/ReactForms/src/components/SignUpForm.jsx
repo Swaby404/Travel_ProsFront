@@ -37,7 +37,7 @@ function SignUpForm({setToken}) {
    let errors = false;
 
 
-   if (username.length < 8) {
+   if (username.length < 5) {
      setUsernameError("Username is too short") ;
      errors = true
    } else {
