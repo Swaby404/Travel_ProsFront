@@ -1,14 +1,19 @@
 //login provides popup for user to login, upon submission user is sent to discover page!
+/// need token for auth  
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 
 export default function Login(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
     function handleLogin(e) {
         e.preventDefault();
         // Code to handle login goes here
         if (props.toggle) props.toggle();
+        navigate('/discover');
     }
     return (
         <div className="popup">
