@@ -1,5 +1,5 @@
 ////home page handles login and register popups and sends user to discover page!
-import React from "react";
+ 
 import { useState } from "react";
 import Login from "./Login.jsx";
 import Register from "./Register.jsx";
