@@ -1,4 +1,6 @@
-import "./App.css";
+///App.js handles routing between pages
+
+import "./index.css";
 import {
     BrowserRouter as Router,
     Routes,
@@ -6,8 +8,13 @@ import {
     Navigate,
 } from "react-router-dom";
 import Home from "./components/Home";
-import About from "./components/About";
-import ContactUs from "./components/ContactUs";
+import Register from "./components/Register";
+import Discover from "./components/Discover";
+import Login from "./components/Login";
+
+
+
+
 
 function App() {
     return (
@@ -20,12 +27,16 @@ function App() {
                         element={<Home />}
                     />
                     <Route
-                        path="/about"
-                        element={<About />}
+                        path="/register"
+                        element={<Register />}
                     />
                     <Route
-                        path="/contactus"
-                        element={<ContactUs />}
+                        path="/discover"
+                        element={<Discover />}
+                    />
+                    <Route
+                        path="/login"
+                        element={<Login to="/login" />}
                     />
                     <Route
                         path="*"
