@@ -1,15 +1,18 @@
-import React, { useState } from "react";
-import './Home.jsx';
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+ 
 
 export default function Form(props) {
     // States for registration
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+    
     // States for checking the errors
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
-
+      
     // Handling the name change
     const handleName = (e) => {
         setName(e.target.value);
@@ -30,6 +33,7 @@ export default function Form(props) {
         e.preventDefault();
         if (name === "" || email === "" || password === "") {
             setError(true);
+             navigate('/discover');
         } else {
             setSubmitted(true);
             setError(false);
