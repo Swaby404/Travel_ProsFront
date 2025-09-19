@@ -19,6 +19,7 @@ const Home = () => {
             
             <p>Happy traveling and happy reviewing!</p>
             <>
+            
                 <button onClick={() => setShowLogin(true)}>Discover</button>
                 <button onClick={() => setShowRegister(true)}>Register</button>
                 {showLogin && <Login toggle={() => setShowLogin(false)} />}

@@ -9,11 +9,15 @@ export default function Login(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+
     function handleLogin(e) {
         e.preventDefault();
-        // Code to handle login goes here
+        localStorage.setItem('token', 'logged-in');
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
         if (props.toggle) props.toggle();
         navigate('/discover');
+        
     }
     return (
         <div className="popup">

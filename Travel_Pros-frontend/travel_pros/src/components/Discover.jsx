@@ -1,37 +1,52 @@
-import { useState, useEffect } from "react";
+
+
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
+export default function Destination() {
+  const [destinations, setDestinations] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
+  useEffect(() => {
+    const fetchDestinations = async () => {
+      const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flags,region,cca3,description');
+      const data = await response.json();
+      setDestinations(data);
+    };
+    fetchDestinations();
+  }, []);
 
-export default function Discover() {
-    const [destinations, setDestinations] = useState([]);
-    useEffect(() => {
-        const fetchDestinations = async () => {
-            const response = await fetch('https://tripadvisor.com');
-            const data = await response.json();
-            setDestinations(data);
-        };
-        fetchDestinations();
-        setDestinations([{ id: 1, name: 'Paris', description: 'The city of lights and love.' }, { id: 2, name: 'New York', description: 'The city that never sleeps.' }, { id: 3, name: 'Tokyo', description: 'A blend of tradition and modernity.' }]);
-    }, []);
-
- 
-
-
-return (////displays for country with images using lorem picsumum
-        <div className="discover-container">
-            <h1>Discover New Destinations</h1>
-            <div className="destination-list">
-                {destinations.map(destination => (
-                    <div key={destination.id} className="destination-card">
-                        <img src={`https://picsum.photos/200/300?random=${destination.id}`} alt={destination.name} />
-                        <Link to={`/destinations/${destination.id}`}> </Link>
-                            <h2>{destination.name}</h2>
-                        
-                        <p>{destination.description}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <>
+      <h2>Welcome to The Discovery Page</h2>
+      <div>
+        <input
+          type="text"
+          placeholder="Search for a destination"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+      <ul>
+        {destinations
+          .filter(destination =>
+            destination.name.common
+              .toLowerCase()
+              .includes(searchTerm.toLowerCase())
+          )
+          .map((destination) => (
+            <li className="discover_container" key={destination.cca3}>
+              <Link to={`/discover/${destination.cca3}`}>{destination.name.common}</Link>
+              <p>Region: {destination.region}</p>
+              <img
+                src={destination.flags && destination.flags.png ? destination.flags.png : ""}
+                alt={destination.name.common}
+                
+                style={{ width: '100px', height: '70px' }}
+              />
+            </li>
+          ))}
+      </ul>
+    </>
+  );
 }
